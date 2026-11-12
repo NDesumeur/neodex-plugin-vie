@@ -1,0 +1,9 @@
+{
+  "pluginId": "neodex.vie",
+  "repo": "NDesumeur/neodex-plugin-vie",
+  "version": "1.0.0",
+  "sha256": "c39c5e781e310b70723fa50ef105a3a98bb7213a57694f38ffd5bbe94ad11c92",
+  "approvedAt": "2026-11-12T06:35:37.943Z",
+  "neobase": ">=4.0.0",
+  "signature": "ab4OuEO7MvtUS5SODNOVgrnqC1Os5YmIQk4U/xUO9//AaZT+HwpVjUc8QQh995CSNMZY5vmJX57GmBBukpBUAw=="
+}
