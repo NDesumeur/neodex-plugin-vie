@@ -1,0 +1,23 @@
+{
+  "id": "neodex.vie",
+  "name": "Jeu de la vie",
+  "version": "1.0.0",
+  "author": "NDesumeur",
+  "description": "Le jeu de la vie de Conway et ses cousins : dessine des cellules à la souris, lance la simulation à la vitesse voulue, pose 12 motifs célèbres (planeur, pulsar, canon à planeurs de Gosper, gland…) et tourne-les, change la règle (HighLife, Seeds, Jour et nuit, Labyrinthe ou la tienne en B/S), suis la population sur un graphique et l'âge des cellules en couleurs, et échange tes créations au format RLE.",
+  "icon": "icon.png",
+  "entry": "index.js",
+  "view": "vie",
+  "neobase": ">=4.0.0",
+  "type": "app",
+  "category": "Outils",
+  "mobile": true,
+  "compatibility": ["windows", "android", "linux"],
+  "syncMode": "fusion",
+  "syncInfo": "La grille, la règle et la vitesse.",
+  "system": false,
+  "dependencies": {},
+  "sdk": "2.1.0",
+  "permissions": [
+    "storage"
+  ]
+}
