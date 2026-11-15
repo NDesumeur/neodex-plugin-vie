@@ -30,3 +30,7 @@ The exchange format of every pattern site (like LifeWiki): paste an RLE and **Pl
 ## Data
 
 The grid, rule and speed are kept in the plugin's folder. Permission: `storage` only.
+
+## Infinite grid
+
+The grid has no edges anymore: gliders fly away and the gun grows forever. Drag it with the middle button, Shift + drag or the « ✋ Pan » button, zoom with the wheel, and « Fit view » frames every living cell. The 25 patterns are grouped by family: spaceships, oscillators, still lifes, methuselahs and guns.

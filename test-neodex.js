@@ -17,5 +17,21 @@ module.exports = async ({ pj, sleep }) => {
   await btn('Conway'); await btn('Effacer'); await btn('Canon à planeurs');
   await pj(`(() => { const c = document.getElementById('jv_canvas'), r = c.getBoundingClientRect(); c.dispatchEvent(new PointerEvent('pointerdown', {clientX: r.left + r.width * .06, clientY: r.top + r.height * .06, button: 0, bubbles: true})); })(), 0`);
   await pj(`document.dispatchEvent(new KeyboardEvent('keydown', {key: 'Escape', bubbles: true})), 0`); await steps(150); await sleep(300);
-  return 'canon, 30 tours, planeur posé, règle HighLife ok';
+  // la grille glisse : en mode Déplacer, glisser de 100 px vers la gauche décale la vue de 100 / taille d'une cellule
+  const v0 = await pj(`({...document.getElementById('jv_canvas').__vw})`);
+  await pj(`document.getElementById('jv_pan').click(), 0`);
+  await pj(`(() => { const c = document.getElementById('jv_canvas'), r = c.getBoundingClientRect(), o = x => ({clientX: r.left + x, clientY: r.top + 100, button: 0, pointerId: 1, bubbles: true}); c.dispatchEvent(new PointerEvent('pointerdown', o(300))); c.dispatchEvent(new PointerEvent('pointermove', o(200))); c.dispatchEvent(new PointerEvent('pointerup', o(200))); })(), 0`);
+  const v1 = await pj(`({...document.getElementById('jv_canvas').__vw})`);
+  if (Math.abs(v1.ox - v0.ox - 100 / v0.cs) > .01 || v1.oy !== v0.oy) throw new Error('glisser : ' + JSON.stringify([v0, v1]));
+  await pj(`document.getElementById('jv_pan').click(), 0`);
+  // la grille est infinie : les planeurs du canon partent au loin et la population grandit toujours
+  const p1 = await num('Population'); await steps(600); await sleep(200); const p2 = await num('Population');
+  if (p2 <= p1 + 60) throw new Error('les planeurs se perdent : ' + p1 + ' → ' + p2);
+  await pj(`document.getElementById('jv_fit').click(), 0`); await sleep(200);
+  const v2 = await pj(`document.getElementById('jv_canvas').__vw`);
+  const onAfterEsc = await pj(`document.querySelectorAll('.jvPat button.on').length`); if (onAfterEsc) throw new Error('Échap ne lâche pas le motif');
+  await btn('Effacer'); await btn('Canon à planeurs');
+  await pj(`(() => { const c = document.getElementById('jv_canvas'), r = c.getBoundingClientRect(); c.dispatchEvent(new PointerEvent('pointerdown', {clientX: r.left + r.width * .08, clientY: r.top + r.height * .1, button: 0, bubbles: true})); })(), 0`);
+  await pj(`document.dispatchEvent(new KeyboardEvent('keydown', {key: 'Escape', bubbles: true})), 0`); await pj(`document.getElementById('jv_fit').click(), 0`); await steps(160); await sleep(300);
+  return 'canon, 30 tours, planeur posé, règle HighLife, grille qui glisse, ' + p2 + ' cellules après 600 tours de plus, recadrage à ' + v2.cs + ' px ok';
 };

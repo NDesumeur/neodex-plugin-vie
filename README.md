@@ -30,3 +30,7 @@ Le format d'échange de tous les sites de motifs (comme LifeWiki) : colle un RLE
 ## Données
 
 La grille, la règle et la vitesse sont gardées dans le dossier du plugin. Autorisation : `storage` seulement.
+
+## Grille infinie
+
+La grille n'a plus de bords : les planeurs partent au loin et le canon grandit sans fin. Fais-la glisser avec le clic molette, Maj + glisser ou le bouton « ✋ Déplacer », zoome à la molette, et « Recentrer » cadre toutes les cellules vivantes. Les 25 motifs sont rangés par famille : vaisseaux, oscillateurs, natures mortes, mathusalems et canons.
