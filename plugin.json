@@ -1,7 +1,7 @@
 {
   "id": "neodex.vie",
   "name": "Jeu de la vie",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "NDesumeur",
   "description": "Le jeu de la vie de Conway et ses cousins : dessine des cellules à la souris, lance la simulation à la vitesse voulue, pose 12 motifs célèbres (planeur, pulsar, canon à planeurs de Gosper, gland…) et tourne-les, change la règle (HighLife, Seeds, Jour et nuit, Labyrinthe ou la tienne en B/S), suis la population sur un graphique et l'âge des cellules en couleurs, et échange tes créations au format RLE. Grille infinie qu'on fait glisser (clic molette, Maj + glisser ou « Déplacer ») et qu'on zoome à la molette, bouton « Recentrer », 25 motifs rangés par famille (vaisseaux, oscillateurs, natures mortes, mathusalems, canons), textes et boutons plus grands. Échap et Espace remarchent.",
   "icon": "icon.png",
